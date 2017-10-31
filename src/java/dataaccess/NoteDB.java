@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 public class NoteDB {
 
     public int insert(Note note) throws NotesDBException {
+        
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
 
@@ -20,6 +21,7 @@ public class NoteDB {
 
             String preparedQuery = "INSERT INTO Notes (dateCreated, contents) VALUES (?, ?)"; //start the query
             PreparedStatement ps = connection.prepareStatement(preparedQuery); //prepare it
+            
             ps.setDate(1, toSQLDate(note.getDateCreated())); //chaneg first paramter or ?
             ps.setString(2, note.getContents()); //change second ?
 
@@ -43,6 +45,7 @@ public class NoteDB {
 
             String preparedSQL = "UPDATE Notes SET " + "contents = ? " + "WHERE noteId = ?";
             PreparedStatement ps = connection.prepareStatement(preparedSQL);
+            
             ps.setString(1, note.getContents());
             ps.setInt(2, note.getNoteId()); //if 3 ?, then 3 set statements, one for each  paramter(ie the ?)
 
@@ -61,6 +64,7 @@ public class NoteDB {
 
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
+        
         String preparedQuery = "DELETE FROM Notes WHERE noteId = ?";
         PreparedStatement ps;
 
@@ -85,6 +89,7 @@ public class NoteDB {
 
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
+        
         PreparedStatement ps = null;
         ResultSet rs = null;
 
@@ -120,6 +125,7 @@ public class NoteDB {
 
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
+        
         String selectSQL = "SELECT * FROM Notes WHERE noteId = ?";
         PreparedStatement ps = null;
         ResultSet rs = null;
