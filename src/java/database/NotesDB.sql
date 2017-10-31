@@ -1,9 +1,11 @@
 DROP DATABASE if exists NotesDB;
+
 CREATE DATABASE NotesDB;
 
 USE NotesDB;
 
 DROP TABLE Notes;
+
 CREATE TABLE Notes(
     noteId INT NOT NULL AUTO_INCREMENT,
     dateCreated DATETIME NOT NULL,
@@ -12,6 +14,7 @@ CREATE TABLE Notes(
 );
 
 DROP TABLE User;
+
 CREATE TABLE User( 
     username VARCHAR(10) NOT NULL,
     password VARCHAR(10) NOT NULL,

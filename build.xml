@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="Week_07_Lab_-_JDBC" default="default" basedir=".">
-    <description>Builds, tests, and runs the project Week 07 Lab - JDBC.</description>
+<project name="Week07Lab_-_JDBC" default="default" basedir=".">
+    <description>Builds, tests, and runs the project Week07Lab - JDBC.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 

@@ -9,24 +9,25 @@ public class Note implements Serializable {
     private Date dateCreated;
     private String contents;
 
-    public Note() {
+     public Note(int noteId, Date dateCreated, String contents) {
+        
+        this.noteId = noteId;
+        this.dateCreated = dateCreated;
+        this.contents = contents;
     }
 
     public Note(Date dateCreated, String contents) {
+        
         this.dateCreated = dateCreated;
         this.contents = contents;
     }
     
     public Note(int noteId, String contents) {
+        
         this.noteId = noteId;
         this.contents = contents;
     }
     
-    public Note(int noteId, Date dateCreated, String contents) {
-        this.noteId = noteId;
-        this.dateCreated = dateCreated;
-        this.contents = contents;
-    }
 
     public int getNoteId() {
         return noteId;
