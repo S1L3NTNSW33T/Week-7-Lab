@@ -22,6 +22,7 @@ public class ConnectionPool {
     }
     
     public Connection getConnection() {
+        
         try {
             return dataSource.getConnection();
         } catch (SQLException e) {
